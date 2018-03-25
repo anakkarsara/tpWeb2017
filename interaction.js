@@ -18,6 +18,3 @@ function getMousePosition(canvas, evt) {
     y: evt.clientY - rect.top
   };
 };
-
-
-
