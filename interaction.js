@@ -7,8 +7,8 @@ function DnD(canvas, interactor) {
   this.moving = false;
 
 
-  this.mousedown = function (evt) {
-    var pos = getMousePosition(canvas, evt);
+  this.mousedown = function (event) {
+    var pos = getMousePosition(canvas, event);
     this.initX = pos.x;
     this.initY = pos.y;
     this.pression = true;
@@ -17,10 +17,10 @@ function DnD(canvas, interactor) {
     console.log("mousedown");
   }.bind(this);
 
-  this.mousemove = function (evt) {
+  this.mousemove = function (event) {
     if (this.pression){
       this.moving = true;
-      var pos = getMousePosition(canvas, evt);
+      var pos = getMousePosition(canvas, event);
       this.finalX = pos.x;
       this.finalY = pos.y;
       interactor.onInteractionUpdate(this);
@@ -28,9 +28,9 @@ function DnD(canvas, interactor) {
     }
   }.bind(this);
 
-  this.mouseup = function (evt) {
+  this.mouseup = function (event) {
     if (this.moving){
-      var pos = getMousePosition(canvas, evt);
+      var pos = getMousePosition(canvas, event);
       this.finalX = pos.x;
       this.finalY = pos.y;
       this.pression = false;
@@ -46,11 +46,11 @@ function DnD(canvas, interactor) {
   canvas.addEventListener('mousemove', this.mousemove, false);
   canvas.addEventListener('mouseup', this.mouseup, false);
 }
-// Place le point de l'événement evt relativement à la position du canvas.
-function getMousePosition(canvas, evt) {
+// Place le point de l'événement event relativement à la position du canvas.
+function getMousePosition(canvas, event) {
   var rect = canvas.getBoundingClientRect();
   return {
-    x: Math.round(evt.clientX - rect.left),
-    y: Math.round(evt.clientY - rect.top)
+    x: Math.round(event.clientX - rect.left),
+    y: Math.round(event.clientY - rect.top)
   };
 }
