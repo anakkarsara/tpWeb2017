@@ -3,7 +3,7 @@
 ## Objectif du TP :
 Ce TP consiste à créer une application Web pour faire du dessin vectoriel, i.e. pour dessiner des rectangles, des lignes, ainsi que définir leur couleur et leur épaisseur de trait. La figure ci-dessous montre l’état de l’application réalisée :
 
-<a href="https://imgur.com/a/pEhBS"><img src="https://imgur.com/a/pEhBS" title="source: imgur.com" /></a>
+![](/dessin.PNG)
 
 ## Architecture et outils utilisés :
 Pour cela, on a utilisé le patron d'architecture MVC (Modèle-Vue-Contrôleur) ainsi que l'élément HTML5 Canvas.
